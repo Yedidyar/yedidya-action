@@ -1,0 +1,13 @@
+description: A simple hello world action
+inputs:
+  who-to-greet:
+    default: World
+    description: Who to greet
+    required: true
+name: Hello World
+outputs:
+  time:
+    description: The time we greeted you
+runs:
+  main: ../lib/hello-world-action.mjs
+  using: node24

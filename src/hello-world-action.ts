@@ -1,7 +1,10 @@
 import * as core from "@actions/core";
 
-async function run(): Promise<void> {
+import { test } from "./test.js";
+
+function run(): void {
   try {
+    test();
     const nameToGreet = core.getInput("who-to-greet");
     console.log(`Hello ${nameToGreet}!`);
     const time = new Date().toTimeString();

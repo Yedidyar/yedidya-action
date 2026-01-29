@@ -1,18 +1,36 @@
 {
+  "type": "commonjs",
   "name": "yedidya-action",
   "version": "0.0.1",
   "private": true,
   "description": "Yedidya's action",
   "scripts": {
-    "build": "tsdown"
+    "build": "tsdown",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "license": "MIT",
   "dependencies": {
     "@actions/core": "3.0.0"
   },
   "devDependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
+    "@eslint/eslintrc": "^7.5.1",
+    "@eslint/js": "^9.39.2",
+    "@eslint/markdown": "^7.5.1",
     "@types/node": "25.1.0",
+    "@vitest/eslint-plugin": "^1.6.6",
+    "eslint": "^9.39.2",
+    "eslint-plugin-jsdoc": "^62.5.0",
+    "eslint-plugin-jsonc": "^2.21.0",
+    "eslint-plugin-n": "^17.23.2",
+    "eslint-plugin-package-json": "^0.88.2",
+    "eslint-plugin-perfectionist": "^5.4.0",
+    "eslint-plugin-regexp": "^3.0.0",
+    "eslint-plugin-yml": "^3.0.0",
+    "jiti": "^2.6.1",
     "tsdown": "0.20.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
   }
 }
