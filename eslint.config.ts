@@ -5,7 +5,6 @@ import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import n from "eslint-plugin-n";
 import packageJson from "eslint-plugin-package-json";
-import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
 import { defineConfig, globalIgnores } from "eslint/config";
@@ -25,12 +24,12 @@ export default defineConfig(
       jsdoc.configs["flat/logical-typescript-error"],
       jsdoc.configs["flat/stylistic-typescript-error"],
       n.configs["flat/recommended"],
-      perfectionist.configs["recommended-natural"],
       regexp.configs["flat/recommended"],
       tseslint.configs.strictTypeChecked,
       tseslint.configs.stylisticTypeChecked,
     ],
     files: ["**/*.{js,ts}"],
+    ignores: ["lib/**/*"],
     languageOptions: {
       parserOptions: {
         projectService: {
@@ -66,7 +65,10 @@ export default defineConfig(
       // https://github.com/eslint-community/eslint-plugin-n/issues/472
       "n/no-unpublished-bin": "off",
     },
-    settings: { perfectionist: { partitionByComment: true, type: "natural" } },
+    settings: {
+      node: { version: ">=20.0.0" },
+      perfectionist: { partitionByComment: true, type: "natural" },
+    },
   },
   {
     extends: [jsonc.configs["flat/recommended-with-json"]],
